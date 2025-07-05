@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work Projects</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="container">
+    <!-- Logo at the top -->
+    <img id="logo" src="images/logo.png" alt="My Logo" />
+
+    <!-- Search bar -->
+    <input type="text" id="search" placeholder="Search projects..." onkeyup="filterCards()" />
+
+   
+   <!-- Cards -->
+    <a href="https://amzn.to/3IsB0jI" class="card" target="_blank">
+      <img src="https://m.media-amazon.com/images/I/61D50KafzZL._AC_UY218_.jpg" alt="Beta" />
+      <div class="text">Mouse</div>
+    </a>
+
+    <a href="https://amzn.to/4lixxTy" class="card" target="_blank">
+      <img src="https://m.media-amazon.com/images/I/81rq+IrJ36L._AC_UY218_.jpg" alt="Gamma" />
+      <div class="text">Laptop</div>
+    </a>
+
+    <a href="https://amzn.to/4krTcHR" class="card" target="_blank">
+      <img src="https://m.media-amazon.com/images/I/61BHoFhIOQL._AC_UL320_.jpg" alt="Delta" />
+      <div class="text">Mic</div>
+    </a>
+
+    <a href="https://amzn.to/3GuoQX2" class="card" target="_blank">
+      <img src="https://m.media-amazon.com/images/I/71MdZ3q5UEL._AC_UL320_.jpg" alt="Omega" />
+      <div class="text">Chair</div>
+    </a>
+    
+    <a href="https://amzn.to/40DFRoq" class="card" target="_blank">
+      <img src="https://m.media-amazon.com/images/I/71A-u5XDv3L._AC_SL1500_.jpg" alt="Alpha" />
+      <div class="text">Keyboard</div>
+    </a>
+  </div>
+
+  <script>
+    function filterCards() {
+      const input = document.getElementById("search").value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach(card => {
+        const text = card.querySelector(".text").textContent.toLowerCase();
+        card.style.display = text.includes(input) ? "flex" : "none";
+      });
+    }
+  </script>
+</body>
+</html>
